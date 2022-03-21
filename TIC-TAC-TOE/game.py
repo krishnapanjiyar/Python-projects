@@ -19,11 +19,20 @@ class TicTacToe:
 
     def available_moves(self):
         return [i for i, spot in enumerate(self.board) if spot == ' ']
-        # return []
-        # moves = []
-        # for (i, x) in enumerate(self.board):
-        #     # ['x', 'x', 'o'] --> [(0, 'x'), (1, 'x'), (2, 'o')]
-        #     if spot == ' ':
-        #         moves.append(i)
-        # return moves
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_sqaures(self):
+        return self.board.count(' ')
        
+def play(game, x_player, o_player, prin_game=True):
+    if print_game:
+        game.print_board_nums()
+
+    letter = 'X' # starting letter
+    # iterate while the game still has empty squares
+    # (we don't have to worry about winner because we'll just return that
+    #  which breaks the loop)
+    while game.empty_sqares():
+        pass
