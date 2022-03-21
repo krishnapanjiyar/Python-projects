@@ -5,11 +5,11 @@ def play():
     computer = random.choice(['r', 'p', 's'])
 
     if user == computer:
-        return 'tie'
+        return 'It\'s a tie'
 
         # r > s, s > p, p > r
-        if is_win(user, computer):
-            return 'You won!'
+    if is_win(user, computer):
+        return 'You won!'
 
         return 'You lost!'
 
