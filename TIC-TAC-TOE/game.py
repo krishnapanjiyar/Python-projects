@@ -4,6 +4,7 @@ class TicTacToe:
         self.current_winner = None # keep track of winner!
 
     def print_board(self):
+        # this is just getting the rows
         for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
             print('| ' + ' | '.join(row) + ' |')
 
@@ -22,8 +23,14 @@ class TicTacToe:
 
     def num_empty_sqaures(self):
         return self.board.count(' ')
+
+    def empty_squares(self):
+        return ' ' in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(' ')
        
-def play(game, x_player, o_player, prin_game=True):
+def play(game, x_player, o_player, print_game=True):
     if print_game:
         game.print_board_nums()
 
