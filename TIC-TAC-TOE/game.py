@@ -1,6 +1,3 @@
-from fcntl import F_GET_SEALS
-
-
 class TicTacToe:
     def _init_(self):
         self.board = [' ' for _ in range(9)] # we will use a single list to rep 3x3 board
