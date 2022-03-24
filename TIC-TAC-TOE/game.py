@@ -24,11 +24,10 @@ class TicTacToe:
     def num_empty_sqaures(self):
         return self.board.count(' ')
 
-    def empty_squares(self):
-        return ' ' in self.board
-
-    def num_empty_squares(self):
-        return self.board.count(' ')
+    def make_move(self, square, letter):
+        # if valid move, then make the move (assign square to letter)
+        # then return true. if invalid, return false
+        
        
 def play(game, x_player, o_player, print_game=True):
     if print_game:
@@ -39,4 +38,10 @@ def play(game, x_player, o_player, print_game=True):
     # (we don't have to worry about winner because we'll just return that
     #  which breaks the loop)
     while game.empty_sqares():
-        pass
+        # get the move from the appropriate player
+        if letter == 'O':
+            square = o_player.get_move(game)
+        else:
+            square = x_player.get_move(game)
+
+        # let's define a function to make a move!
