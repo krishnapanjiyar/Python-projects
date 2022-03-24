@@ -83,4 +83,4 @@ class SmartComputerPlayer(Player):
             else:
                 if sim_score['score'] < best['score']:
                     best = sim_score
-        return
+        return best
