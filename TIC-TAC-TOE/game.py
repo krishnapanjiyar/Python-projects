@@ -1,4 +1,4 @@
-import player import HumanPlayer, RandomComputerPlayer
+from player import HumanPlayer, RandomComputerPlayer
 
 class TicTacToe:
     def _init_(self):
@@ -50,7 +50,7 @@ class TicTacToe:
         if all([spot == letter for spot in column]):
             return True
 
-        # checkdiagnosis
+        # check diagnosis
         # but only if the square is an even number (0, 2, 4, 6, 8)
         # these are the only moves possible to win a diagonal
         if square % 2 == 0:
@@ -73,7 +73,7 @@ def play(game, x_player, o_player, print_game=True):
     # iterate while the game still has empty squares
     # (we don't have to worry about winner because we'll just return that
     #  which breaks the loop)
-    while game.empty_sqares():
+    while game.empty_squares():
         # get the move from the appropriate player
         if letter == 'O':
             square = o_player.get_move(game)
@@ -92,13 +92,8 @@ def play(game, x_player, o_player, print_game=True):
                     print(letter + ' wins!')
                 return letter
 
-
             # after we made our move, we need to alternate letters
             letter = 'O' if letter == 'X' else 'X'  #swtiches player
-            # if letter == 'X'
-            #       letter = 'O'
-            # else:
-            #       letter = 'X'
 
         if print_game:
             print('It\'s a tie!')
